@@ -13,7 +13,7 @@
 
 # misc
 /front_end/.DS_Store
-/front_end/.env.local
+/front_end/.env
 /front_end/.env.development.local
 /front_end/.env.test.local
 /front_end/.env.production.local
@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 ###> symfony/framework-bundle ###
-/back_end/.env.local
+/back_end/.env
 /back_end/.env.local.php
 /back_end/.env.*.local
 /back_end/config/secrets/prod/prod.decrypt.private.php
