@@ -1,0 +1,33 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/front_end/node_modules
+/front_end/.pnp
+/front_end/.pnp.js
+
+# testing
+/front_end/coverage
+
+# production
+/front_end/build
+
+# misc
+/front_end/.DS_Store
+/front_end/.env.local
+/front_end/.env.development.local
+/front_end/.env.test.local
+/front_end/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+###> symfony/framework-bundle ###
+/back_end/.env.local
+/back_end/.env.local.php
+/back_end/.env.*.local
+/back_end/config/secrets/prod/prod.decrypt.private.php
+/back_end/public/bundles/
+/back_end/var/
+/back_end/vendor/
+###< symfony/framework-bundle ###

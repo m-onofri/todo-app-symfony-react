@@ -1,0 +1,149 @@
+/**GENERAL STYLE**/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.righted {
+  text-align: right;
+}
+
+.lefted {
+  text-align: left;
+}
+
+.space-btm {
+  margin-bottom: 2rem;
+}
+
+hr {
+  margin-left: 5rem;
+  margin-right: 5rem;
+  border-color: #F5F5F5;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/**BUTTONS**/
+.btn {
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  width: 6rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.buttons {
+  padding: 1rem;
+  margin: auto;
+}
+
+.buttons .btn {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.add-btn {
+  background-color: #EC1C59;
+  border-color: #EC1C59;
+}
+
+.start-btn {
+  background-color: #3BBF53;
+  border-color: #3BBF53;
+}
+
+.delete-btn {
+  background-color: #E91414;
+  border-color: #E91414;
+}
+
+.done-btn {
+  background-color: #3BBF53;
+  border-color: #3BBF53;
+}
+
+.back-btn {
+  background-color: #E91414;
+  border-color: #E91414;
+}
+
+/**HEADER**/
+header {
+  margin: 0;
+  padding: 1rem;
+  background-color: #F5F5F5;
+}
+
+/**ADMIN SECTION**/
+#admin-section {
+  padding: 1rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.admin-form input{
+  display: block;
+  margin: 1rem auto;
+}
+
+/**SECONDARY CONTAINER**/
+#secondary-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#secondary-container p{
+  font-size: 1.5rem;
+}
+
+.activity {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem 0;
+}
+
+.first-block {
+  width: 10%;
+}
+.second-block,
+.third-block,
+.fourth-block {
+  width: 30%;
+}
+
+/**TODO SECTION**/
+.activity-todo .second-block {
+  width: 60%;
+}
+
+.activity-todo .fourth-block {
+  width: 0;
+}
