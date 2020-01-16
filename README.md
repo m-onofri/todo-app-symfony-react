@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple Todo App with Symfony 5 and React
 
-## Available Scripts
+In this personal project I created a simple Todo App.
+Users can define a list of projects, and for each project can define a list of activities required to complete the project.
+The back-end of the project is based on the Symfony 5 framework and mySQL database, while the front-end of the project is based on the React library.
 
-In the project directory, you can run:
+## How to clone the app locally
 
-### `npm start`
+Clone the git repository in the folder of your choice:
+```
+git clone https://github.com/m-onofri/todo-app-symfony-react.git
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install the packages:
+```
+cd todo-app-symfony-react/back_end
+composer install
+```
+```
+cd todo-app-symfony-react/front_end
+npm install
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Run the back-end server:
+```
+symfony server:start
+```
 
-### `npm test`
+Run the front-end server:
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In your browser, go to http://localhost:3000/, and have a look at the app.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Main features
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* Users can define a list of projects.
+* When a project is completed, the app allows the user to set the project as completed.
+* For each project users can define a list of activities that are required to complete the project.
+* Activities exist in three diffent states:
+    * "Todo": the activity was just defined, but the user didn't start it yet;
+    * "In Progress": the user has started the activity but didn't finish it yet;
+    * "Completed": the activity was completed.
+* User can update the name of the projects and the activities (exept when they are completed), and they can also delete projects and activities.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Cross-browser consistency 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The project was checked on MacOS in Chrome, Firefox, Opera and Safari, and on these browsers it works properly.
