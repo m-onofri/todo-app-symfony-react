@@ -1,4 +1,5 @@
 import React from 'react';
+import UpdateButton from './UpdateButton';
 import PropTypes from 'prop-types';
 
 function InProgress (props) {
@@ -8,8 +9,14 @@ function InProgress (props) {
             {props.activities.map((activity, i) => {
                 return (
                     <div className="activity activity-inprogress">
-                        <div className="first-block"></div>
-                        <div className="second-block"><p className="name"><span className="level">{i + 1} </span>- {activity.name}</p></div>
+                        <div className="second-block">
+                        <UpdateButton 
+                            i={i} 
+                            obj={activity} 
+                            section="activity" 
+                            updateName={props.updateName}
+                        />
+                        </div>
                         <div className="third-block">
                             <p>Started at {activity.startedAt}</p>
                         </div>

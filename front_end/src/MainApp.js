@@ -94,6 +94,31 @@ class MainApp extends Component {
     });
   }
 
+  updateProjectName = (newName, id) => {
+    $.ajax({
+      url: `http://localhost:8000/projects/update/name`,
+      method:'PUT',
+      data:JSON.stringify({
+        projectName: newName,
+        id: id
+      }),
+       success: function( result ) {
+                  console.log(result);
+              }
+    });
+
+    const updatedProjects = this.state.projects.map(p => {
+      if (p.id === id) {
+        p.name = newName;
+      }
+      return p;
+    });
+
+    this.setState({
+      projects: updatedProjects
+    });
+  }
+
   reactiveProject = id => {
     $.ajax({
       url:'http://localhost:8000/projects/update/status',
@@ -127,6 +152,7 @@ class MainApp extends Component {
                                                 deleteProject={this.deleteProject}
                                                 reactiveProject={this.reactiveProject}
                                                 projects={this.state.projects}
+                                                updateProjectName={this.updateProjectName}
                                               />} />
         <Route path="/app/project/:projectId/:projectTitle" render={(props) => <Project
                                                                       match={props.match}

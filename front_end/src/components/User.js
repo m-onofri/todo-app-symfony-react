@@ -24,6 +24,7 @@ function User (props) {
                     projects={activeProjects}
                     completeProject={props.completeProject}
                     deleteProject={props.deleteProject}
+                    updateProjectName={props.updateProjectName}
                 />
                 <hr className="space-btm" />
                 <CompletedProjects 

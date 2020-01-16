@@ -8,7 +8,7 @@ function CompletedProjects (props) {
             {props.projects.map((project, i) => {
                 return (
                     <div className="activity activity-done">
-                        <div className="first-block"></div>
+                        {/* <div className="first-block"></div> */}
                         <div className="second-block"><p className="name"><span className="level">{i + 1} </span>- {project.name}</p></div>
                         <div className="third-block">
                             <p>Completed at {project.completedAt}</p>

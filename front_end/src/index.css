@@ -91,6 +91,11 @@ a {
   border-color: #E91414;
 }
 
+.update-btn {
+  background-color: #f1b441;
+  border-color: #f1b441;
+}
+
 /**HEADER**/
 header {
   margin: 0;
@@ -127,13 +132,16 @@ input {
 .activity {
   display: flex;
   flex-direction: row;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 6rem;
 }
 
 .first-block {
   width: 10%;
 }
-.second-block,
+.second-block {
+  width: 40%;
+}
+
 .third-block,
 .fourth-block {
   width: 30%;
@@ -146,4 +154,8 @@ input {
 
 .activity-todo .fourth-block {
   width: 0;
+}
+
+.name {
+  display: inline;
 }

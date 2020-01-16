@@ -17,7 +17,7 @@ const Project = (props) => {
                 setActivities(data);
             }
         });
-    }, []);
+    }, [params.projectId]);
 
     function addActivity(activityName, projectId) {
         const updatedActivities = [...activities];
@@ -90,6 +90,29 @@ const Project = (props) => {
         setActivities(updatedActivities);
       }
     
+      function updateActivityName(newName, id) {
+        $.ajax({
+          url: `http://localhost:8000/projects/${params.projectId}/activities/update/name`,
+          method:'PUT',
+          data:JSON.stringify({
+            activityName: newName,
+            id: id
+          }),
+           success: function( result ) {
+                      console.log(result);
+                  }
+        });
+    
+        const updatedActivities = activities.map(a => {
+          if (a.id === id) {
+            a.name = newName;
+          }
+          return a;
+        });
+    
+        setActivities(updatedActivities);
+    }
+    
     function deleteActivity(activityId) {
         const myActivities = [...activities];
         const updatedActivities = myActivities.filter(a => a.id !== activityId);
@@ -135,6 +158,7 @@ const Project = (props) => {
                     activities={activities.filter(a => a.status==="todo")}
                     startActivity={startActivity}
                     deleteActivity={deleteActivity}
+                    updateName={updateActivityName}
                 />
                 <hr className="space-btm" />
                 <InProgress 
@@ -142,6 +166,7 @@ const Project = (props) => {
                     activities={activities.filter(a => a.status==="in progress")}
                     completeActivity={completeActivity}
                     backActivity={backActivity}
+                    updateName={updateActivityName}
                 />
                 <hr className="space-btm" />
                 <Done

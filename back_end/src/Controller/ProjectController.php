@@ -84,6 +84,25 @@ class ProjectController extends AbstractController
     }
 
     /**
+     * @Route("/projects/update/name", methods={"PUT"})
+     */
+    public function updateProjectName(Request $request, EntityManagerInterface $em)
+    {
+        $data = json_decode($request->getContent(), true);
+        $id = $data['id'];
+        $name = $data['projectName'];
+        
+        $repository = $em->getRepository(Project::class); 
+        $project = $repository->find($id);
+        $project->setName($name);
+        
+        $em->persist($project);
+        $em->flush();
+
+        return new Response("Updated project name with id " . $id);
+    }
+
+    /**
      * @Route("/projects/{id}/delete", methods={"DELETE"})
      */
     public function deleteProject(EntityManagerInterface $em, $id)

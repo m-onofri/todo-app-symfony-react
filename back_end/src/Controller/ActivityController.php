@@ -76,6 +76,25 @@ class ActivityController
     }
 
     /**
+     * @Route("/projects/{projectId}/activities/update/name", methods={"PUT"})
+     */
+    public function updateActivityName(Request $request, EntityManagerInterface $em)
+    {
+        $data = json_decode($request->getContent(), true);
+        $id = $data['id'];
+        $name = $data['activityName'];
+        
+        $repository = $em->getRepository(Activity::class); 
+        $activity = $repository->find($id);
+        $activity->setName($name);
+        
+        $em->persist($activity);
+        $em->flush();
+
+        return new Response("Updated activity name with id " . $id);
+    }
+
+    /**
      * @Route("/projects/{projectId}/activities/{id}/delete", methods={"DELETE"})
      */
     public function deleteActivity(EntityManagerInterface $em, $id)
